@@ -16,6 +16,9 @@ while (playAgain == true) {
     let dispari = false;
     let pari = false;
 
+    console.log(disparipari);
+    
+
     while (disparipari !== "dispari" && disparipari !== "pari") {
         alert("Hai inserito un valore non corretto, riprova.");
         disparipari = prompt(`Type "pari" or "dispari"`);
@@ -26,7 +29,7 @@ while (playAgain == true) {
 
 
     while (isNaN(num1) || num1 > 5 || num1 < 1) {
-        alert("Hai inserito un numero non valido. Devi inserire un numero da 1 a 5.");
+        alert("Hai inserito un valore non valido. Devi inserire un numero da 1 a 5.");
         num1 = parseInt(prompt("Inserisci un numero da 1 a 5"));
     }
 
@@ -37,7 +40,11 @@ while (playAgain == true) {
     alert(`Hai scelto ${num1} e che la somma sarà ${disparipari}`);
     alert(`Il computer ha scelto ${num2}`)
 
-    if (somma % 2 === 0) {
+    let sommaFinale = somma(num1 , num2)
+    console.log(`la somma è ${sommaFinale}`);
+    
+
+    if (sommaFinale % 2 === 0) {
         pari = true;
     } else {
         dispari = true
@@ -45,17 +52,17 @@ while (playAgain == true) {
 
     if (disparipari === "dispari") {
         if (dispari == true) {
-            alert("Hai vinto congratulazioni!")
+            alert(`la somma è ${sommaFinale}, Hai vinto congratulazioni!`)
         } else {
-            alert("Mi dispiace, hai perso!")
+            alert(`la somma è ${sommaFinale}, Mi dispiace, hai perso!`)
         }
     }
 
     if (disparipari === "pari") {
         if (dispari == true) {
-            alert("Mi dispiace, hai perso!")
+            alert(`la somma è ${sommaFinale}, Mi dispiace, hai perso!`)
         } else {
-            alert("Hai vinto congratulazioni!")
+            alert(`la somma è ${sommaFinale}, Hai vinto congratulazioni!`)
         }
     }
     playAgain = confirm("Vuoi giocare ancora?")
